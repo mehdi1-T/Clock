@@ -2,7 +2,7 @@ import tkinter as tk
 from datetime import datetime
 import platform
 
-class TransparentClock:
+class transparent_clock:
     def __init__(self):
         # Create main hidden window for taskbar
         self.root = tk.Tk()
@@ -88,5 +88,5 @@ class TransparentClock:
         self.root.mainloop()
 
 if __name__ == '__main__':
-    clock = TransparentClock()
+    clock = transparent_clock()
     clock.run()
