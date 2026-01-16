@@ -4,7 +4,7 @@ This is an python Clock 🕖 that show the current time
 ## Features     
 - easy to run
 - clean & beatifull look
-- 
+- easy to use
 
 ## ScreenShot
 ![Clock Screenshot](Screenshot.png)
@@ -18,7 +18,7 @@ This is an python Clock 🕖 that show the current time
 
 
 
-## Technologies
+## Tools
 - Python
 - Time module
 - Tkinter for UI

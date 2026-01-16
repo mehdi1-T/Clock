@@ -25,5 +25,5 @@ $s.WorkingDirectory='$FOLDER'; ^
 $s.IconLocation='$SCRIPT'; ^
 $s.Save()"
 
-echo Shortcut created on Desktop! 
+echo Shortcut created on your Desktop! 
 pause
