@@ -1,29 +1,33 @@
 @echo off
 REM -------------------------------
-REM Setup Clock Shortcut
+REM Setup Clock Shortcut for EXE
 REM -------------------------------
 
-REM Check if Python is installed
-where python >nul 2>nul
-if %ERRORLEVEL% NEQ 0 (
-    echo Python is not installed or not in PATH
-    echo Please install Python 3 first
-    pause
-    exit
-)
+echo Creating desktop shortcut for Clock...
+echo.
 
 REM Get the folder of this bat file
-set FOLDER=%~dp0
-set SCRIPT=%FOLDER%clock.py
+set "FOLDER=%~dp0"
+set "EXE=%FOLDER%dist\main.exe"
 
-REM Create desktop shortcut using PowerShell
-powershell -Command ^
-"$s=(New-Object -COM WScript.Shell).CreateShortcut('$env:USERPROFILE\Desktop\Clock.lnk'); ^
-$s.TargetPath='python.exe'; ^
-$s.Arguments='$SCRIPT'; ^
-$s.WorkingDirectory='$FOLDER'; ^
-$s.IconLocation='$SCRIPT'; ^
-$s.Save()"
+REM Check if the EXE exists
+if not exist "%EXE%" (
+    echo ERROR: "%EXE%" not found!
+    echo Please make sure main.exe is in the dist folder.
+    pause
+    exit /b 1
+)
 
-echo Shortcut created on your Desktop! 
+REM Create desktop shortcut using PowerShell (single line)
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$ShortcutPath = [System.IO.Path]::Combine([Environment]::GetFolderPath('Desktop'), 'Clock.lnk'); if (Test-Path $ShortcutPath) { Remove-Item $ShortcutPath -Force }; $shell = New-Object -ComObject WScript.Shell; $shortcut = $shell.CreateShortcut($ShortcutPath); $shortcut.TargetPath = '%EXE%'; $shortcut.WorkingDirectory = [System.IO.Path]::GetDirectoryName('%EXE%'); $shortcut.IconLocation = '%EXE%'; $shortcut.Save()"
+
+if %ERRORLEVEL% EQU 0 (
+    echo.
+    echo Success! Shortcut created on your Desktop.
+) else (
+    echo.
+    echo ERROR: Failed to create shortcut.
+)
+
+echo.
 pause

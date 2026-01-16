@@ -1,5 +1,5 @@
-('C:\\Users\\bismiallah\\desktop\\python\\clock\\transparent '
- 'clock\\build\\main\\PYZ-00.pyz',
+('C:\\Users\\bismiallah\\Desktop\\Python\\CLOCK\\transparent '
+ 'CLOCK\\build\\main\\PYZ-00.pyz',
  [('_compat_pickle',
    'C:\\Users\\bismiallah\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_compat_pickle.py',
    'PYMODULE'),
