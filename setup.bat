@@ -23,7 +23,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "$ShortcutPath = [System.
 
 if %ERRORLEVEL% EQU 0 (
     echo.
-    echo Success! Shortcut created on your Desktop.
+    echo Success! Shortcut created on your Desktop, but dont forget be focus.
 ) else (
     echo.
     echo ERROR: Failed to create shortcut.

@@ -8,6 +8,8 @@ A simple and beautiful Python clock application that displays the current time.
 - Clean & beautiful look
 - Lightweight and fast
 - Always on top option (if applicable)
+- Change Fore color
+- 
 
 ![Clock Screenshot](Screenshot.png)
 
